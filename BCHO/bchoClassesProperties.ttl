@@ -1,0 +1,629 @@
+﻿@prefix : <http://www.ciudadpatrimoniomundial.com/ontologias/BCH/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://creativecommons.org/ns#> .
+@prefix gml: <http://www.opengis.net/gml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bcho: <http://www.ciudadpatrimoniomundial.com/ontologias/BCH/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix mondis: <http://kbss.felk.cvut.cz/ontologies/2011/mondis-core-templates.owl#> .
+@prefix bchoData: <http://www.ciudadpatrimoniomundial.com/ontologias/BCH/Data/> .
+@prefix mondis: <http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#> .
+@prefix mondistaxo: <http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-taxonomies.owl#> .
+@prefix BldgCitygml2: <http://www.opengis.net/citygml/building/2.0/> .
+@base <http://www.ciudadpatrimoniomundial.com/ontologias/BCH/> .
+
+
+mondis:Agent rdf:type owl:Class; rdfs:subClassOf cidoc:E19_Physical_Object.
+
+mondis:CHObject rdf:type owl:Class; rdfs:subClassOf cidoc:E19_Physical_Object .
+
+mondis:Component rdf:type owl:Class; rdfs:subClassOf mondis:CHObject.
+
+mondis:ComponentManifestationOfDamage rdf:type owl:Class; rdfs:subClassOf mondis:ManifestationOfDamage.
+mondis:Hazard rdf:type owl:Class; rdfs:subClassOf :HB36_Risk_Assessment.
+
+mondis:Intervention rdf:type owl:Class; rdfs:subClassOf cidoc:E7_Activity.
+
+mondis:ManifestationOfDamage rdf:type owl:Class; rdfs:subClassOf :HB30_Building_Physical_Feature.
+
+
+mondis:MaterialManifestationOfDamage rdf:type owl:Class; rdfs:subClassOf mondis:ManifestationOfDamage.
+
+mondis:Risk rdf:type owl:Class; rdfs:subClassOf bcho:HB36_Risk_Assessment .
+
+mondis:Vulnerability rdf:type owl:Class ; rdfs:label "M6 Vulnerability"@en ; rdfs:subClassOf bcho:HB36_Risk_Assessment.
+
+mondistaxo:BiologicalColonization rdf:type owl:Class;
+ rdfs:subClassOf mondis:MaterialManifestationOfDamage.
+
+mondistaxo:Crack rdf:type owl:Class; rdfs:subClassOf mondis:MaterialManifestationOfDamage.
+
+mondistaxo:DecolorationAndDeposit rdf:type owl:Class; rdfs:subClassOf mondis:MaterialManifestationOfDamage.
+mondistaxo:Deformation rdf:type owl:Class; rdfs:subClassOf mondis:ComponentManifestationOfDamage.
+
+mondistaxo:Detachment rdf:type owl:Class; rdfs:subClassOf mondis:MaterialManifestationOfDamage.
+
+mondistaxo:Displacement rdf:type owl:Class; rdfs:subClassOf mondis:ComponentManifestationOfDamage .
+
+mondistaxo:EarthquakeHazard rdf:type owl:Class; rdfs:subClassOf mondis:Hazard .
+
+mondistaxo:EarthquakeVulnerability rdf:type owl:Class; rdfs:subClassOf mondis:Vulnerability .
+
+mondistaxo:Failure rdf:type owl:Class; rdfs:subClassOf mondis:ComponentManifestationOfDamage.
+
+mondistaxo:FireHazard rdf:type owl:Class; rdfs:subClassOf mondis:Hazard .
+
+mondistaxo:FireVulnerability rdf:type owl:Class; rdfs:subClassOf mondis:Vulnerability .
+
+mondistaxo:FloodHazard rdf:type owl:Class; rdfs:subClassOf mondis:Hazard .
+
+mondistaxo:FloodVulnerability rdf:type owl:Class; rdfs:subClassOf mondis:Vulnerability .
+
+mondistaxo:LandslideHazard rdf:type owl:Class; rdfs:subClassOf mondis:Hazard .
+mondistaxo:LandslideVulnerability rdf:type owl:Class; rdfs:subClassOf mondis:Vulnerability .
+
+mondistaxo:MaterialDeformation rdf:type owl:Class; rdfs:subClassOf mondis:MaterialManifestationOfDamage .
+
+mondistaxo:MaterialLoss rdf:type owl:Class; rdfs:subClassOf mondis:MaterialManifestationOfDamage .
+
+mondistaxo:Rotation rdf:type owl:Class; rdfs:subClassOf mondis:ComponentManifestationOfDamage .
+cidoc:E10_Transfer_of_Custody rdf:type owl:Class; rdfs:subClassOf cidoc:E7_Activity.
+
+cidoc:E11_Modification rdf:type owl:Class; rdfs:subClassOf cidoc:E7_Activity.
+
+cidoc:E12_Production rdf:type owl:Class; rdfs:subClassOf cidoc:E11_Modification.
+
+cidoc:E13_Attribute_Assignment rdf:type owl:Class; rdfs:subClassOf cidoc:E7_Activity .
+
+cidoc:E14_Condition_Assessment rdf:type owl:Class; rdfs:subClassOf cidoc:E13_Attribute_Assignment.
+
+cidoc:E15_Identifier_Assignment rdf:type owl:Class; rdfs:subClassOf cidoc:E13_Attribute_Assignment.
+
+
+cidoc:E17_Type_Assignment rdf:type owl:Class; rdfs:subClassOf cidoc:E13_Attribute_Assignment.
+
+
+cidoc:E18_Physical_Thing rdf:type owl:Class;
+ rdfs:subClassOf cidoc:E72_Legal_Object .
+
+cidoc:E19_Physical_Object rdf:type owl:Class; rdfs:subClassOf cidoc:E18_Physical_Thing .
+
+
+cidoc:E1_CRM_Entity rdf:type owl:Class.
+
+
+cidoc:E21_Person rdf:type owl:Class; rdfs:subClassOf cidoc:E39_Actor .
+
+cidoc:E26_Physical_Feature rdf:type owl:Class; rdfs:subClassOf cidoc:E18_Physical_Thing .
+
+cidoc:E28_Conceptual_Object rdf:type owl:Class; rdfs:subClassOf cidoc:E71_Man-Made_Thing .
+
+cidoc:E29_Design_or_Procedure rdf:type owl:Class; rdfs:subClassOf cidoc:E90_Symbolic_Object .
+
+cidoc:E2_Temporal_Entity rdf:type owl:Class; rdfs:subClassOf cidoc:E1_CRM_Entity .
+
+cidoc:E39_Actor rdf:type owl:Class; rdfs:subClassOf cidoc:E77_Persistent_Item .
+
+cidoc:E3_Condition_State rdf:type owl:Class; rdfs:subClassOf cidoc:E2_Temporal_Entity .
+
+cidoc:E40_Legal_Body rdf:type owl:Class; rdfs:subClassOf cidoc:E74_Group .
+
+cidoc:E41_Appellation rdf:type owl:Class; rdfs:subClassOf cidoc:E90_Symbolic_Object .
+
+cidoc:E42_Identifier rdf:type owl:Class; rdfs:subClassOf cidoc:E41_Appellation .
+
+cidoc:E44_Place_Appellation rdf:type owl:Class; rdfs:subClassOf cidoc:E41_Appellation .
+
+cidoc:E45_Address rdf:type owl:Class; rdfs:subClassOf cidoc:E44_Place_Appellation .
+
+cidoc:E46_Section_Definition rdf:type owl:Class; rdfs:subClassOf cidoc:E44_Place_Appellation .
+
+cidoc:E47_Spatial_Coordinates rdf:type owl:Class; rdfs:subClassOf cidoc:E44_Place_Appellation .
+
+cidoc:E48_Place_Name rdf:type owl:Class; rdfs:subClassOf cidoc:E44_Place_Appellation .
+
+cidoc:E49_Time_Appellation rdf:type owl:Class; rdfs:subClassOf cidoc:E41_Appellation .
+
+cidoc:E4_Period rdf:type owl:Class; rdfs:subClassOf cidoc:E2_Temporal_Entity .
+
+cidoc:E50_Date rdf:type owl:Class; rdfs:subClassOf cidoc:E49_Time_Appellation .
+
+cidoc:E51_Contact_Point rdf:type owl:Class; rdfs:subClassOf cidoc:E41_Appellation .
+
+cidoc:E52_Time-Span rdf:type owl:Class; rdfs:subClassOf cidoc:E1_CRM_Entity .
+
+cidoc:E53_Place rdf:type owl:Class; rdfs:subClassOf cidoc:E1_CRM_Entity .
+
+cidoc:E54_Dimension rdf:type owl:Class; rdfs:subClassOf cidoc:E1_CRM_Entity .
+
+cidoc:E55_Type rdf:type owl:Class; rdfs:subClassOf cidoc:E28_Conceptual_Object .
+
+cidoc:E57_Material rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+cidoc:E58_Measurement_Unit rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+cidoc:E5_Event rdf:type owl:Class; rdfs:subClassOf cidoc:E4_Period .
+
+cidoc:E70_Thing rdf:type owl:Class; rdfs:subClassOf cidoc:E77_Persistent_Item .
+
+cidoc:E71_Man-Made_Thing rdf:type owl:Class; rdfs:subClassOf cidoc:E70_Thing .
+
+cidoc:E72_Legal_Object rdf:type owl:Class; rdfs:subClassOf cidoc:E70_Thing .
+
+cidoc:E73_Information_Object rdf:type owl:Class; rdfs:subClassOf cidoc:E90_Symbolic_Object .
+
+cidoc:E74_Group rdf:type owl:Class; rdfs:subClassOf cidoc:E39_Actor .
+
+cidoc:E75_Conceptual_Object_Appellation rdf:type owl:Class; rdfs:subClassOf cidoc:E41_Appellation .
+
+cidoc:E77_Persistent_Item rdf:type owl:Class; rdfs:subClassOf cidoc:E1_CRM_Entity .
+
+cidoc:E79_Part_Addition rdf:type owl:Class; rdfs:subClassOf cidoc:E11_Modification .
+
+cidoc:E7_Activity rdf:type owl:Class; rdfs:subClassOf cidoc:E5_Event .
+
+cidoc:E80_Part_Removal rdf:type owl:Class; rdfs:subClassOf cidoc:E11_Modification .
+
+cidoc:E82_Actor_Appellation rdf:type owl:Class; rdfs:subClassOf cidoc:E41_Appellation .
+
+cidoc:E89_Propositional_Object rdf:type owl:Class; rdfs:subClassOf cidoc:E28_Conceptual_Object .
+
+cidoc:E90_Symbolic_Object rdf:type owl:Class; rdfs:subClassOf cidoc:E28_Conceptual_Object .
+
+
+
+bcho:HB1_Building rdf:type owl:Class; rdfs:subClassOf mondis:CHObject .
+
+bcho:HB2_Geographic_Area rdf:type owl:Class; rdfs:subClassOf mondis:CHObject .
+
+bcho:HB3_Building_Block rdf:type owl:Class; rdfs:subClassOf bcho:HB2_Geographic_Area .
+
+bcho:HB4_Sector rdf:type owl:Class; rdfs:subClassOf bcho:HB2_Geographic_Area .
+
+bcho:HB5_Zone rdf:type owl:Class; rdfs:subClassOf bcho:HB2_Geographic_Area .
+
+bcho:HB6_City rdf:type owl:Class; rdfs:subClassOf mondis:CHObject .
+
+bcho:HB7_Component_Type rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB8_Facade rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB9_Structure rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB10_Roof rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB11_Arch rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB12_Balconie rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB13_Door rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB14_Protection rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB15_Window rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB16_Beam rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB17_BearingWall rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB18_Column rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB19_Mezzanine rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB20_Stairs rdf:type owl:Class; rdfs:subClassOf bcho:HB7_Component_Type .
+
+bcho:HB21_Traditional_Workmanship rdf:type owl:Class; rdfs:subClassOf cidoc:E29_Design_or_Procedure .
+
+bcho:HB22_Tradditional_Workmanship_Assignment rdf:type owl:Class; rdfs:subClassOf cidoc:E13_Attribute_Assignment .
+
+bcho:HB23_Scope rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB24_Level_of_Protection rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB25_Heritage_Value rdf:type owl:Class; rdfs:subClassOf cidoc:E89_Propositional_Object .
+
+bcho:HB26_Heritage_Aspect rdf:type owl:Class; rdfs:subClassOf cidoc:E89_Propositional_Object .
+
+bcho:HB27_Heritage_Dimension rdf:type owl:Class; rdfs:subClassOf cidoc:E89_Propositional_Object .
+
+bcho:HB28_Heritage_Feature rdf:type owl:Class; rdfs:subClassOf cidoc:E89_Propositional_Object .
+
+bcho:HB29_Conceptual_Feature rdf:type owl:Class; rdfs:subClassOf bcho:HB28_Heritage_Feature .
+
+bcho:HB30_Building_Physical_Feature rdf:type owl:Class; rdfs:subClassOf cidoc:E26_Physical_Feature . 
+
+bcho:HB31_Decorative_Elements rdf:type owl:Class; rdfs:subClassOf bcho:HB30_Building_Physical_Feature .
+
+bcho:HB32_Organizational_Aspects rdf:type owl:Class; rdfs:subClassOf bcho:HB30_Building_Physical_Feature .
+
+bcho:HB33_Type_of_Implantation rdf:type owl:Class; rdfs:subClassOf bcho:HB32_Organizational_Aspects .
+
+bcho:HB34_Gravity rdf:type owl:Class; rdfs:subClassOf cidoc:E89_Propositional_Object .
+
+bcho:HB35_Gravity_Assignment rdf:type owl:Class; rdfs:subClassOf cidoc:E13_Attribute_Assignment .
+
+bcho:HB36_Risk_Assessment rdf:type owl:Class; rdfs:subClassOf cidoc:E28_Conceptual_Object .
+
+bcho:HB37_Risk_Assessment_Type rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB38_Risk_Type rdf:type  owl:Class; rdfs:subClassOf bcho:HB37_Risk_Assessment_Type .
+
+bcho:HB39_Vulnerability_Type rdf:type owl:Class; rdfs:subClassOf bcho:HB37_Risk_Assessment_Type .
+
+bcho:HB40_Hazard_Type rdf:type owl:Class; rdfs:subClassOf bcho:HB37_Risk_Assessment_Type .
+
+bcho:HB41_Risk_Assignment rdf:type owl:Class; rdfs:subClassOf cidoc:E13_Attribute_Assignment .
+
+bcho:HB42_Vulnerability_Parameter rdf:type owl:Class; rdfs:subClassOf bcho:HB36_Risk_Assessment .
+
+bcho:HB43_Condition_Variable rdf:type owl:Class; rdfs:subClassOf cidoc:E3_Condition_State .
+
+bcho:HB44_Condition_Variable_Assignment rdf:type owl:Class; rdfs:subClassOf cidoc:E14_Condition_Assessment .
+
+bcho:HB45_Performance_Status rdf:type owl:Class; rdfs:subClassOf cidoc:E89_Propositional_Object .
+
+bcho:HB46_Performance_Status_Parameter rdf:type owl:Class; rdfs:subClassOf cidoc:E89_Propositional_Object.
+
+bcho:HB47_Performance_Status_Assignment rdf:type owl:Class; rdfs:subClassOf cidoc:E13_Attribute_Assignment .
+
+bcho:HB48_Therapy rdf:type owl:Class; rdfs:subClassOf cidoc:E7_Activity .
+
+bcho:HB49_Action rdf:type owl:Class; rdfs:subClassOf cidoc:E7_Activity .
+
+bcho:HB50_Action_Type rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB51_Action_Status rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB52_Resource rdf:type owl:Class; rdfs:subClassOf cidoc:E77_Persistent_Item .
+
+bcho:HB53_Inspection rdf:type owl:Class; rdfs:subClassOf cidoc:E7_Activity .
+
+bcho:HB54_Spatial_Representation rdf:type owl:Class; rdfs:subClassOf cidoc:E90_Symbolic_Object .
+
+bcho:HB55_Decorative_Supertructure rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+bcho:HB56_Domain_Type rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB57_Tenure_Type rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB58_Usage rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB59_Usage_Asignment rdf:type owl:Class; rdfs:subClassOf cidoc:E13_Attribute_Assignment .
+
+bcho:HB60_BuildingBlock_Physical_Feature rdf:type owl:Class; rdfs:subClassOf cidoc:E26_Physical_Feature .
+
+bcho:HB61_Building_Usage rdf:type owl:Class; rdfs:subClassOf bcho:HB58_Usage .
+
+bcho:HB62_BuildingBlock_Usage rdf:type owl:Class; rdfs:subClassOf bcho:HB58_Usage .
+
+bcho:HB63_Building_Block_Section rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB64_Architectural_Style rdf:type owl:Class; rdfs:subClassOf mondis:CHObject .
+
+bcho:HB65_Socio_Economic_Status rdf:type owl:Class; rdfs:subClassOf cidoc:E55_Type .
+
+bcho:HB66_Construction_Permit_Grant
+ rdf:type owl:Class; rdfs:subClassOf cidoc:E7_Activity .
+
+
+
+
+
+BldgCitygml2:Building rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_AbstractBuilding .
+
+
+
+BldgCitygml2:BuildingFurniture rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_CityObject .
+
+
+
+
+
+
+
+BldgCitygml2:BuildingInstallation rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_CityObject .
+
+
+
+BldgCitygml2:BuildingPart rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_AbstractBuilding .
+
+BldgCitygml2:CeilingSurface rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+
+
+BldgCitygml2:Door rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_Opening .
+
+
+
+BldgCitygml2:FloorSurface rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+
+
+
+
+BldgCitygml2:GroundSurface rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+
+
+
+
+BldgCitygml2:IntBuildingInstallation rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_CityObject .
+
+
+
+
+
+BldgCitygml2:InteriorWallSurface rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+
+
+
+
+
+
+BldgCitygml2:OuterCeilingSurface rdf:type owl:Class;  rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+
+
+BldgCitygml2:OuterFloorSurface rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+
+
+BldgCitygml2:RoofSurface rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+
+
+
+
+
+
+BldgCitygml2:Room rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_CityObject .
+
+
+
+BldgCitygml2:WallSurface rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_BoundarySurface .
+
+
+
+BldgCitygml2:Window rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_Opening .
+
+
+
+
+
+
+
+BldgCitygml2:_AbstractBuilding rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_CityObject .
+
+
+
+
+
+
+
+BldgCitygml2:_BoundarySurface rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_CityObject .
+
+
+
+BldgCitygml2:_CityObject rdf:type owl:Class; rdfs:subClassOf gml:Geometry .
+
+
+
+BldgCitygml2:_Opening rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_CityObject .
+
+BldgCitygml2:_Site rdf:type owl:Class; rdfs:subClassOf BldgCitygml2:_CityObject .
+
+
+
+gml:AbstractGeometricAggregate rdf:type owl:Class; rdfs:subClassOf gml:Geometry .
+
+
+
+gml:Curve rdf:type owl:Class; rdfs:subClassOf gml:GeometricPrimitive .
+
+
+
+gml:GeometricPrimitive rdf:type owl:Class; rdfs:subClassOf gml:Geometry .
+
+
+
+gml:Geometry rdf:type owl:Class; rdfs:subClassOf bcho:HB54_Spatial_Representation .
+
+
+
+gml:MultiCurve rdf:type owl:Class; rdfs:subClassOf gml:AbstractGeometricAggregate .
+
+
+
+gml:MultiGeometry rdf:type owl:Class; rdfs:subClassOf gml:AbstractGeometricAggregate .
+
+gml:MultiPoint rdf:type owl:Class; rdfs:subClassOf gml:AbstractGeometricAggregate .
+
+
+
+
+
+
+
+gml:MultiSolid rdf:type owl:Class; rdfs:subClassOf gml:AbstractGeometricAggregate .
+
+
+
+
+
+
+
+gml:MultiSurface rdf:type owl:Class; rdfs:subClassOf gml:AbstractGeometricAggregate .
+
+
+
+gml:Point rdf:type owl:Class; rdfs:subClassOf gml:GeometricPrimitive .
+
+
+
+
+
+
+
+gml:Polygon rdf:type owl:Class; rdfs:subClassOf gml:Surface .
+
+
+
+
+
+gml:Solid rdf:type owl:Class; rdfs:subClassOf gml:GeometricPrimitive .
+
+gml:Surface rdf:type owl:Class; rdfs:subClassOf gml:GeometricPrimitive .
+
+
+
+
+
+
+
+
+
+
+
+cidoc:P1_is_identified_by rdf:type owl:ObjectProperty; rdfs:domain cidoc:E1_CRM_Entity; rdfs:range cidoc:E41_Appellation; owl:inverseOf cidoc:P1i_identifies.
+cidoc:P1i_identifies rdf:type owl:ObjectProperty; rdfs:domain cidoc:E41_Appellation; rdfs:range cidoc:E1_CRM_Entity; owl:inverseOf cidoc:P1_is_identified_by.
+cidoc:P2_has_type rdf:type owl:ObjectProperty; rdfs:domain cidoc:E1_CRM_Entity; rdfs:range cidoc:E55_Type; owl:inverseOf cidoc:P2i_is_type_of.
+cidoc:P2i_is_type_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E55_Type; rdfs:range cidoc:E1_CRM_Entity; owl:inverseOf cidoc:P2_has_type.
+cidoc:P3_has_note rdf:type owl:DatatypeProperty; rdfs:domain cidoc:E1_CRM_Entity; rdfs:range rdfs:Literal.
+cidoc:P4_has_time-span rdf:type owl:ObjectProperty; rdfs:domain cidoc:E2_Temporal_Entity; rdfs:range cidoc:E52_Time-Span; owl:inverseOf cidoc:P4i_is_time-span_of.
+cidoc:P4i_is_time-span_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E52_Time-Span; rdfs:range cidoc:E2_Temporal_Entity; owl:inverseOf cidoc:P4_has_time-span.
+cidoc:P5_consists_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E3_Condition_State; rdfs:range cidoc:E3_Condition_State; owl:inverseOf cidoc:P5i_forms_part_of.
+cidoc:P5i_forms_part_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E3_Condition_State; rdfs:range cidoc:E3_Condition_State; owl:inverseOf cidoc:P5_consists_of.
+cidoc:P8_took_place_on_or_within rdf:type owl:ObjectProperty; rdfs:domain cidoc:E4_Period; rdfs:range cidoc:E19_Physical_Object; owl:inverseOf cidoc:P8i_witnessed.
+cidoc:P8i_witnessed rdf:type owl:ObjectProperty; rdfs:domain cidoc:E19_Physical_Object; rdfs:range cidoc:E4_Period; owl:inverseOf cidoc:P8_took_place_on_or_within.
+cidoc:P14_carried_out_by rdf:type owl:ObjectProperty; rdfs:domain cidoc:E7_Activity; rdfs:range cidoc:E39_Actor; owl:inverseOf cidoc:P14i_performed.
+cidoc:P14i_performed rdf:type owl:ObjectProperty; rdfs:domain cidoc:E39_Actor; rdfs:range cidoc:E7_Activity; owl:inverseOf cidoc:P14_carried_out_by.
+
+cidoc:P43_has_dimension rdf:type owl:ObjectProperty; rdfs:domain cidoc:E70_Thing; rdfs:range cidoc:E54_Dimension; owl:inverseOf cidoc:P43i_is_dimension_of.
+cidoc:P43i_is_dimension_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E54_Dimension; rdfs:range cidoc:E70_Thing; owl:inverseOf cidoc:P43_has_dimension.
+cidoc:P45_consists_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E18_Physical_Thing; rdfs:range cidoc:E57_Material; owl:inverseOf cidoc:P45i_is_incorporated_in.
+cidoc:P45i_is_incorporated_in rdf:type owl:ObjectProperty; rdfs:domain cidoc:E57_Material; rdfs:range cidoc:E18_Physical_Thing; owl:inverseOf cidoc:P45_consists_of.
+cidoc:P46_is_composed_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E18_Physical_Thing; rdfs:range cidoc:E18_Physical_Thing; owl:inverseOf cidoc:P46i_forms_part_of.
+cidoc:P46i_forms_part_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E18_Physical_Thing; rdfs:range cidoc:E18_Physical_Thing; owl:inverseOf cidoc:P46_is_composed_of.
+cidoc:P54_has_current_permanent_location rdf:type owl:ObjectProperty; rdfs:domain cidoc:E19_Physical_Object; rdfs:range cidoc:E53_Place; owl:inverseOf cidoc:P54i_is_current_permanent_location_of.
+cidoc:P54i_is_current_permanent_location_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E53_Place; rdfs:range cidoc:E19_Physical_Object; owl:inverseOf cidoc:P54_has_current_permanent_location.
+cidoc:P56_bears_feature rdf:type owl:ObjectProperty; rdfs:domain cidoc:E19_Physical_Object; rdfs:range cidoc:E26_Physical_Feature; owl:inverseOf cidoc:P56i_is_found_on.
+cidoc:P56i_is_found_on rdf:type owl:ObjectProperty; rdfs:domain cidoc:E26_Physical_Feature; rdfs:range cidoc:E19_Physical_Object; owl:inverseOf cidoc:P56_bears_feature.
+cidoc:P67_refers_to rdf:type owl:ObjectProperty; rdfs:domain cidoc:E89_Propositional_Object; rdfs:range cidoc:E1_CRM_Entity; owl:inverseOf cidoc:P67i_is_referred_by.
+cidoc:P67i_is_referred_by rdf:type owl:ObjectProperty; rdfs:domain cidoc:E1_CRM_Entity; rdfs:range cidoc:E89_Propositional_Object; owl:inverseOf cidoc:P67_refers_to.
+cidoc:P68_foresees_use_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E29_Design_or_Procedure; rdfs:range cidoc:E57_Material; owl:inverseOf cidoc:P68i_use_foreseen_by.
+cidoc:P68i_use_foreseen_by rdf:type owl:ObjectProperty; rdfs:domain cidoc:E57_Material; rdfs:range cidoc:E29_Design_or_Procedure; owl:inverseOf cidoc:P68_foresees_use_of.
+cidoc:P81_ongoing_throughout rdf:type owl:DatatypeProperty; rdfs:domain cidoc:E52_Time-Span; rdfs:range xsd:dateTime.
+cidoc:P82_at_some_time_within rdf:type owl:DatatypeProperty; rdfs:domain cidoc:E52_Time-Span; rdfs:range xsd:dateTime.
+cidoc:P83_had_at_least_duration rdf:type owl:ObjectProperty; rdfs:domain cidoc:E52_Time-Span; rdfs:range cidoc:E54_Dimension; owl:inverseOf cidoc:P83i_was_minimum_duration_of.
+cidoc:P83i_was_minimum_duration_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E54_Dimension; rdfs:range cidoc:E52_Time-Span; owl:inverseOf cidoc:P83_had_at_least_duration.
+cidoc:P84_had_at_most_duration rdf:type owl:ObjectProperty; rdfs:domain cidoc:E52_Time-Span; rdfs:range cidoc:E54_Dimension; owl:inverseOf cidoc:P84i_was_maximum_duration_of.
+cidoc:P84i_was_maximum_duration_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E54_Dimension; rdfs:range cidoc:E52_Time-Span; owl:inverseOf cidoc:P84_had_at_most_duration.
+cidoc:P90_has_value rdf:type owl:DatatypeProperty; rdfs:domain cidoc:E54_Dimension; rdfs:range rdfs:Literal.
+cidoc:P91_has_unit rdf:type owl:ObjectProperty; rdfs:domain cidoc:E54_Dimension; rdfs:range cidoc:E58_Measurement_Unit; owl:inverseOf cidoc:P91i_is_unit_of.
+cidoc:P91i_is_unit_of rdf:type owl:ObjectProperty; rdfs:domain cidoc:E58_Measurement_Unit; rdfs:range cidoc:E54_Dimension; owl:inverseOf cidoc:P91_has_unit.
+cidoc:P115_finishes rdf:type owl:ObjectProperty; rdfs:domain cidoc:E2_Temporal_Entity; rdfs:range cidoc:E2_Temporal_Entity; owl:inverseOf cidoc:P115i_is_finished_by.
+cidoc:P115i_is_finished_by rdf:type owl:ObjectProperty; rdfs:domain cidoc:E2_Temporal_Entity; rdfs:range cidoc:E2_Temporal_Entity; owl:inverseOf cidoc:P115_finishes.
+cidoc:P116_starts rdf:type owl:ObjectProperty; rdfs:domain cidoc:E2_Temporal_Entity; rdfs:range cidoc:E2_Temporal_Entity; owl:inverseOf cidoc:P116i_is_started_by.
+cidoc:P116i_is_started_by rdf:type owl:ObjectProperty; rdfs:domain cidoc:E2_Temporal_Entity; rdfs:range cidoc:E2_Temporal_Entity; owl:inverseOf cidoc:P116_starts.
+cidoc:P127_has_broader_term rdf:type owl:ObjectProperty; rdfs:domain cidoc:E55_Type; rdfs:range cidoc:E55_Type; owl:inverseOf cidoc:P127i_has_narrower_term.
+cidoc:P127i_has_narrower_term rdf:type owl:ObjectProperty; rdfs:domain cidoc:E55_Type; rdfs:range cidoc:E55_Type; owl:inverseOf cidoc:P127_has_broader_term.
+cidoc:P140_assigned_attribute_to rdf:type owl:ObjectProperty; rdfs:domain cidoc:E13_Attribute_Assignment; rdfs:range cidoc:E1_CRM_Entity; owl:inverseOf cidoc:P140i_was_attributed_by.
+cidoc:P140i_was_attributed_by rdf:type owl:ObjectProperty; rdfs:domain cidoc:E1_CRM_Entity; rdfs:range cidoc:E13_Attribute_Assignment; owl:inverseOf cidoc:P140_assigned_attribute_to.
+cidoc:P141_assigned rdf:type owl:ObjectProperty; rdfs:domain cidoc:E13_Attribute_Assignment; rdfs:range cidoc:E1_CRM_Entity; owl:inverseOf cidoc:P141i_was_assigned_by.
+cidoc:P141i_was_assigned_by rdf:type owl:ObjectProperty; rdfs:domain cidoc:E1_CRM_Entity; rdfs:range cidoc:E13_Attribute_Assignment; owl:inverseOf cidoc:P141_assigned.
+cidoc:P148_has_component rdf:type owl:ObjectProperty; rdfs:domain bcho:HB45_Performance_Status; rdfs:range bcho:HB45_Performance_Status; owl:inverseOf cidoc:P148i_is_component_of.
+cidoc:P148i_is_component_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB45_Performance_Status; rdfs:range bcho:HB45_Performance_Status; owl:inverseOf cidoc:P148_has_component.
+
+BldgCitygml2:lod0FootPrint rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_AbstractBuilding; rdfs:range gml:MultiSurface; owl:inverseOf bcho:PG1i_lod0FootPrint_of.
+bcho:PG1i_lod0FootPrint_of rdf:type owl:ObjectProperty; rdfs:domain gml:MultiSurface; rdfs:range BldgCitygml2:_AbstractBuilding; owl:inverseOf BldgCitygml2:lod0FootPrint.
+BldgCitygml2:lod0RoofEdge rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_AbstractBuilding; rdfs:range gml:MultiSurface; owl:inverseOf bcho:PG2i_lod0RoofEdge_of.
+bcho:PG2i_lod0RoofEdge_of rdf:type owl:ObjectProperty; rdfs:domain gml:MultiSurface; rdfs:range BldgCitygml2:_AbstractBuilding; owl:inverseOf BldgCitygml2:lod0RoofEdge.
+BldgCitygml2:lod1Solid rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_AbstractBuilding; rdfs:range gml:Solid; owl:inverseOf bcho:PG3i_lod1Solid_of.
+bcho:PG3i_lod1Solid_of rdf:type owl:ObjectProperty; rdfs:domain gml:Solid; rdfs:range BldgCitygml2:_AbstractBuilding; owl:inverseOf BldgCitygml2:lod1Solid.
+BldgCitygml2:outerBuildingInstallation rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_AbstractBuilding; rdfs:range BldgCitygml2:BuildingInstallation; owl:inverseOf bcho:PG4i_outerBuildingInstallation_of.
+bcho:PG4i_outerBuildingInstallation_of rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:BuildingInstallation; rdfs:range BldgCitygml2:_AbstractBuilding; owl:inverseOf BldgCitygml2:outerBuildingInstallation.
+bcho:PG5i_bounded rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_BoundarySurface; rdfs:range BldgCitygml2:_CityObject; owl:inverseOf BldgCitygml2:boundedBy.
+BldgCitygml2:boundedBy rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_CityObject; rdfs:range BldgCitygml2:_BoundarySurface; owl:inverseOf bcho:PG5i_bounded.
+BldgCitygml2:lod2MultiSurface rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_BoundarySurface; rdfs:range gml:MultiSurface; owl:inverseOf bcho:PG6i_lod2MultiSurface_of.
+bcho:PG6i_lod2MultiSurface_of rdf:type owl:ObjectProperty; rdfs:domain gml:MultiSurface; rdfs:range BldgCitygml2:_BoundarySurface; owl:inverseOf BldgCitygml2:lod2MultiSurface.
+BldgCitygml2:lod3MultiSurface rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_Opening; rdfs:range gml:MultiSurface; owl:inverseOf bcho:PG7i_lod3MultiSurface_of.
+bcho:PG7i_lod3MultiSurface_of rdf:type owl:ObjectProperty; rdfs:domain gml:MultiSurface; rdfs:range BldgCitygml2:_Opening; owl:inverseOf BldgCitygml2:lod3MultiSurface.
+BldgCitygml2:opening rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_BoundarySurface; rdfs:range BldgCitygml2:_Opening; owl:inverseOf bcho:PG8i_opening_of.
+bcho:PG8i_opening_of rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_Opening; rdfs:range BldgCitygml2:_BoundarySurface; owl:inverseOf BldgCitygml2:opening.
+BldgCitygml2:lod4Solid rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:Room; rdfs:range gml:Solid; owl:inverseOf bcho:PG9i_lod4Solid_of.
+bcho:PG9i_lod4Solid_of rdf:type owl:ObjectProperty; rdfs:domain gml:Solid; rdfs:range BldgCitygml2:Room; owl:inverseOf BldgCitygml2:lod4Solid.
+BldgCitygml2:lod4MultiSurface rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:Room; rdfs:range gml:MultiSurface; owl:inverseOf bcho:PG10i_lod4MultiSurface_of.
+bcho:PG10i_lod4MultiSurface_of rdf:type owl:ObjectProperty; rdfs:domain gml:MultiSurface; rdfs:range BldgCitygml2:Room; owl:inverseOf BldgCitygml2:lod4MultiSurface.
+bcho:PG11_lod4Geometry rdf:type owl:ObjectProperty; rdfs:domain BldgCitygml2:_CityObject; rdfs:range gml:Geometry; owl:inverseOf bcho:PG11i_lod4Geometry_of.
+bcho:PG11i_lod4Geometry_of rdf:type owl:ObjectProperty; rdfs:domain gml:Geometry; rdfs:range BldgCitygml2:_CityObject; owl:inverseOf bcho:PG11_lod4Geometry.
+
+bcho:PHB1_has_scope rdf:type owl:ObjectProperty; rdfs:domain cidoc:E40_Legal_Body; rdfs:range bcho:HB23_Scope; owl:inverseOf bcho:PHB1i_is_scope_of.
+bcho:PHB1i_is_scope_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB23_Scope; rdfs:range cidoc:E40_Legal_Body; owl:inverseOf bcho:PHB1_has_scope.
+bcho:PHB2_has_courtyard rdf:type owl:DatatypeProperty; rdfs:domain bcho:HB32_Organizational_Aspects; rdfs:range xsd:integer.
+bcho:PHB3_has_orchard rdf:type owl:DatatypeProperty; rdfs:domain bcho:HB32_Organizational_Aspects; rdfs:range xsd:integer.
+bcho:PHB4_has_agent rdf:type owl:ObjectProperty; rdfs:domain mondis:ManifestationOfDamage; rdfs:range mondis:Agent; owl:inverseOf bcho:PHB4i_is_agent_of.
+bcho:PHB4i_is_agent_of rdf:type owl:ObjectProperty; rdfs:domain mondis:Agent; rdfs:range mondis:ManifestationOfDamage; owl:inverseOf bcho:PHB4_has_agent.
+bcho:PHB5_has_damage rdf:type owl:ObjectProperty; rdfs:domain bcho:HB34_Gravity; rdfs:range mondis:ManifestationOfDamage; owl:inverseOf bcho:PHB5i_is_damage_of.
+bcho:PHB5i_is_damage_of rdf:type owl:ObjectProperty; rdfs:domain mondis:ManifestationOfDamage; rdfs:range bcho:HB34_Gravity; owl:inverseOf bcho:PHB5_has_damage.
+bcho:PHB6_has_weight rdf:type owl:DatatypeProperty; rdfs:domain bcho:HB42_Vulnerability_Parameter; rdfs:range owl:real.
+bcho:PHB7_has_vulnerability_parameter rdf:type owl:ObjectProperty; rdfs:domain mondis:Vulnerability; rdfs:range bcho:HB42_Vulnerability_Parameter; owl:inverseOf bcho:PHB7i_is_damage_vulnerability_parameter_of.
+bcho:PHB7i_is_damage_vulnerability_parameter_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB42_Vulnerability_Parameter; rdfs:range mondis:Vulnerability; owl:inverseOf bcho:PHB7_has_vulnerability_parameter.
+bcho:PHB8_has_condition_value rdf:type owl:DatatypeProperty; rdfs:domain bcho:HB44_Condition_Variable_Assignment; rdfs:range owl:real.
+bcho:PHB9_has_condition_weight rdf:type owl:DatatypeProperty; rdfs:domain bcho:HB44_Condition_Variable_Assignment; rdfs:range owl:real.
+bcho:PHB10_has_condition_variable rdf:type owl:ObjectProperty; rdfs:domain bcho:HB44_Condition_Variable_Assignment; rdfs:range bcho:HB43_Condition_Variable; owl:inverseOf bcho:PHB10i_is_condition_variable_of.
+bcho:PHB10i_is_condition_variable_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB43_Condition_Variable; rdfs:range bcho:HB44_Condition_Variable_Assignment; owl:inverseOf bcho:PHB10_has_condition_variable.
+bcho:PHB11_has_condition rdf:type owl:ObjectProperty; rdfs:domain bcho:HB25_Heritage_Value; rdfs:range cidoc:E3_Condition_State; owl:inverseOf bcho:PHB11i_refers_to_value.
+bcho:PHB11i_refers_to_value rdf:type owl:ObjectProperty; rdfs:domain cidoc:E3_Condition_State; rdfs:range bcho:HB25_Heritage_Value; owl:inverseOf bcho:PHB11_has_condition.
+bcho:PHB12_has_parameter rdf:type owl:ObjectProperty; rdfs:domain bcho:HB45_Performance_Status; rdfs:range bcho:HB46_Performance_Status_Parameter; owl:inverseOf bcho:PHB12i_is_parameter_of.
+bcho:PHB12i_is_parameter_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB46_Performance_Status_Parameter; rdfs:range bcho:HB45_Performance_Status; owl:inverseOf bcho:PHB12_has_parameter.
+bcho:PHB13_has_max_limit rdf:type owl:DatatypeProperty; rdfs:domain bcho:HB46_Performance_Status_Parameter; rdfs:range owl:real.
+bcho:PHB14_has_min_limit rdf:type owl:DatatypeProperty; rdfs:domain bcho:HB46_Performance_Status_Parameter; rdfs:range owl:real.
+bcho:PHB15_has_therapy rdf:type owl:ObjectProperty; rdfs:domain bcho:HB45_Performance_Status; rdfs:range bcho:HB48_Therapy; owl:inverseOf bcho:PHB15i_is_therapy_of.
+bcho:PHB15i_is_therapy_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB48_Therapy; rdfs:range bcho:HB45_Performance_Status; owl:inverseOf bcho:PHB15_has_therapy.
+bcho:PHB16_has_suggested_action rdf:type owl:ObjectProperty; rdfs:domain bcho:HB48_Therapy; rdfs:range bcho:HB49_Action; owl:inverseOf bcho:PHB16i_is_suggested_action_of.
+bcho:PHB16i_is_suggested_action_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB49_Action; rdfs:range bcho:HB48_Therapy; owl:inverseOf bcho:PHB16_has_suggested_action.
+bcho:PHB17_has_status rdf:type owl:ObjectProperty; rdfs:domain bcho:HB49_Action; rdfs:range bcho:HB51_Action_Status; owl:inverseOf bcho:PHB17i_is_status_of.
+bcho:PHB17i_is_status_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB51_Action_Status; rdfs:range bcho:HB49_Action; owl:inverseOf bcho:PHB17_has_status.
+bcho:PHB18_has_budget rdf:type owl:DatatypeProperty; rdfs:domain bcho:HB49_Action; rdfs:range owl:real.
+bcho:PHB19_has_resource rdf:type owl:ObjectProperty; rdfs:domain bcho:HB49_Action; rdfs:range bcho:HB52_Resource; owl:inverseOf bcho:PHB19i_is_resource_of.
+bcho:PHB19i_is_resource_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB52_Resource; rdfs:range bcho:HB49_Action; owl:inverseOf bcho:PHB19_has_resource.
+bcho:PHB20_has_intervention rdf:type owl:ObjectProperty; rdfs:domain bcho:HB48_Therapy; rdfs:range mondis:Intervention; owl:inverseOf bcho:PHB20i_is_intervention_of.
+bcho:PHB20i_is_intervention_of rdf:type owl:ObjectProperty; rdfs:domain mondis:Intervention; rdfs:range bcho:HB48_Therapy; owl:inverseOf bcho:PHB20_has_intervention.
+bcho:PHB21_has_intervention_action rdf:type owl:ObjectProperty; rdfs:domain mondis:Intervention; rdfs:range bcho:HB49_Action; owl:inverseOf bcho:PHB21i_is_intervention_action_of.
+bcho:PHB21i_is_intervention_action_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB49_Action; rdfs:range mondis:Intervention; owl:inverseOf bcho:PHB21_has_intervention_action.
+bcho:PHB22_requires_further_inspections rdf:type owl:DatatypeProperty; rdfs:domain mondis:Intervention; rdfs:range xsd:boolean.
+bcho:PHB23_conservation_objective_reached rdf:type owl:DatatypeProperty; rdfs:domain mondis:Intervention; rdfs:range xsd:boolean.
+bcho:PHB24_has_inspection rdf:type owl:ObjectProperty; rdfs:domain bcho:HB48_Therapy; rdfs:range bcho:HB53_Inspection; owl:inverseOf bcho:PHB24i_is_inspection_of.
+bcho:PHB24i_is_inspection_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB53_Inspection; rdfs:range bcho:HB48_Therapy; owl:inverseOf bcho:PHB24_has_inspection.
+bcho:PHB25_has_geographical_representation rdf:type owl:ObjectProperty;  rdfs:domain cidoc:E77_Persistent_Item; rdfs:range bcho:HB54_Spatial_Representation; owl:inverseOf bcho:PHB25i_is_representation_of.
+bcho:PHB25i_is_representation_of rdf:type owl:ObjectProperty; rdfs:domain bcho:HB54_Spatial_Representation; rdfs:range cidoc:E77_Persistent_Item; owl:inverseOf bcho:PHB25_has_geographical_representation.
+
+
+bcho:PM1i_is_subject_to_risk rdf:type owl:ObjectProperty; rdfs:domain mondis:Hazard; rdfs:range mondis:Risk; owl:inverseOf mondis:refersToHazard.
+mondis:refersToHazard rdf:type owl:ObjectProperty; rdfs:domain mondis:Risk; rdfs:range mondis:Hazard; owl:inverseOf bcho:PM1i_is_subject_to_risk.
+mondis:isSubjectedTo rdf:type owl:ObjectProperty; rdfs:domain mondis:Vulnerability; rdfs:range mondis:Hazard; owl:inverseOf bcho:PM2i_refers_to.
+bcho:PM2i_refers_to rdf:type owl:ObjectProperty; rdfs:domain mondis:Hazard; rdfs:range mondis:Vulnerability; owl:inverseOf mondis:isSubjectedTo.
+bcho:PM3i_eliminates rdf:type owl:ObjectProperty; rdfs:domain mondis:Intervention; rdfs:range mondis:Agent; owl:inverseOf mondis:isEliminatedByIntervention.
+mondis:isEliminatedByIntervention rdf:type owl:ObjectProperty; rdfs:domain mondis:Agent; rdfs:range mondis:Intervention; owl:inverseOf bcho:PM3i_eliminates.
+mondis:isRepairOfDamage rdf:type owl:ObjectProperty; rdfs:domain mondis:Intervention; rdfs:range mondis:ManifestationOfDamage; owl:inverseOf bcho:PM4i_is_repaired_on.
+bcho:PM4i_is_repaired_on rdf:type owl:ObjectProperty; rdfs:domain mondis:ManifestationOfDamage; rdfs:range mondis:Intervention; owl:inverseOf mondis:isRepairOfDamage.
+
+
+
+
+
+
+
+
+
+
+
+
+

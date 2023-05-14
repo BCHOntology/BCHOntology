@@ -1,0 +1,1584 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY mondis-core-templates "http://kbss.felk.cvut.cz/ontologies/2011/mondis-core-templates.owl#" >
+    <!ENTITY monument-damage-taxonomies "http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-taxonomies.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#"
+     xml:base="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:mondis-core-templates="http://kbss.felk.cvut.cz/ontologies/2011/mondis-core-templates.owl#"
+     xmlns:monument-damage-taxonomies="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-taxonomies.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl">
+        <rdfs:comment rdf:datatype="&xsd;string">This is core module of the Monument Damage Ontology version 1.0.*. The goal of this ontology is to provide a common exchange format for documentation of cultural heritage data of monuments. More information is available at http://www.mondis.cz. This ontology is freely available under the LGPL (http://www.gnu.org/copyleft/lesser.html).
+</rdfs:comment>
+        <owl:versionIRI rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core-v1.0.2-snapshot.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="&dc;description">
+        <dc:description>Main architectural style(s) of the component/object</dc:description>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#causes -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#causes">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#PropertyChange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#consistOfMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#consistOfMaterial">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Material"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAddedEntity -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAddedEntity">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAddedFunctionalType -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAddedFunctionalType">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalType"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAddedEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAddedUse -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAddedUse">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Use"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UseAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAddedEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAgent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAgent">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Agent"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Mechanism"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAssesmentMethod -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasAssesmentMethod">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#AssesmentMethod"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponent">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#CHObject"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponentAddition -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponentAddition">
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponentManifestationOfDamage -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponentManifestationOfDamage">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasManifestationOfDamage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponentRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponentRemoval">
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasConnectedComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasConnectedComponent">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Connection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasConstructionType -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasConstructionType">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Construction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasContaineeComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasContaineeComponent"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasDating -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasDating">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#TemporalEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasElement -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasElement">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#EnumerationValue"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurementScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasEmployedComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasEmployedComponent">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasEmployedMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasEmployedMaterial">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasEnumeratedValue -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasEnumeratedValue">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#EnumerationValue"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QualitativeMeasurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasEvent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasEvent">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#CHObject"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingComponentRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingComponentRemoval">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentAddition"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentRemoval"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingRemoval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingFunctionalTypeRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingFunctionalTypeRemoval">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeAddition"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeRemoval"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingRemoval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingLocationCharacteristicsRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingLocationCharacteristicsRemoval">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsAddition"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsRemoval"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingRemoval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingRemoval">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Removal"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasPreviousAddition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingUseRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingUseRemoval">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UseAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFollowingRemoval"/>
+        <rdfs:range rdf:resource="&monument-damage-taxonomies;UseRemoval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFunctionalChangeMitigatedRisk -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFunctionalChangeMitigatedRisk">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalChange"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByFunctionalChange"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#mitigates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFunctionalTypeAddition -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFunctionalTypeAddition">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isFunctionalTypeAdditionToComponent"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFunctionalTypeRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasFunctionalTypeRemoval">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isFunctionalTypeRemovalFromComponent"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasIntervenedComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasIntervenedComponent">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isInterventionOfComponent"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasIntervenedMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasIntervenedMaterial">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Material"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMaterialIntervenedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasInterventionMitigatedRisk -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasInterventionMitigatedRisk">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByIntervention"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#mitigates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasIntroducingComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasIntroducingComponent">
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasContaineeComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasLocation">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsChange"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#SpatialThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasLocationCharacteristics -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasLocationCharacteristics">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristics"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsAddition"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isLocationCharacteristicsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasLossOfValue -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasLossOfValue">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentValue"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Vulnerability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasManifestatedComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasManifestatedComponent">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isManifestationOfDamageOfComponent"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasManifestationOfDamage -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasManifestationOfDamage">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMaterial">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMaterialManifestationOfDamage -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMaterialManifestationOfDamage">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Material"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasManifestationOfDamage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurableAspect -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurableAspect">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableAspect"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasuredAspect -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasuredAspect">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableAspect"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasuredQualitativeAspect -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasuredQualitativeAspect">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QualitativeMeasurement"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Quality"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasuredAspect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasuredQuantitativeAspect -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasuredQuantitativeAspect">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QuantitativeMeasurement"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Quantity"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasuredAspect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurement">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurementScale -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurementScale">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurementScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasNumericValue -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasNumericValue">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#NumericValue"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QuantitativeMeasurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasPreviousAddition -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasPreviousAddition"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasQualitativeMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasQualitativeMeasurement">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QualitativeMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasQuantitativeMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasQuantitativeMeasurement">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QuantitativeMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasRemovingComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasRemovingComponent">
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasContaineeComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasRepairingIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasRepairingIntervention">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasRisk -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasRisk">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Risk"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isRiskOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasStructuralChangeMitigatedRisk -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasStructuralChangeMitigatedRisk">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#StructuralChange"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByStructuralChange"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#mitigates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasStructuralType -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasStructuralType">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#StructuralType"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasConstructionType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasStyle -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasStyle">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Style"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasTemporalReference -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasTemporalReference">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#TemporalEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasTotalValue -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasTotalValue">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentValue"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTotalValueOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasUnitOfMeasure -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasUnitOfMeasure">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QuantitativeMeasurement"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UnitOfMeasure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasUseAddition -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasUseAddition">
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isUseAdditionToComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasUseRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasUseRemoval">
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isUseRemovalFromComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasValidTimeReference -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasValidTimeReference">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#TemporalEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasVulnerability -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasVulnerability">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Vulnerability"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isVulnerabilityOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isActivationOf -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isActivationOf">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Hazard"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#NaturalDisaster"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isComponentAdditionToContainer -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isComponentAdditionToContainer">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentAddition"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponentAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isComponentRemovalFromContainer -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isComponentRemovalFromContainer">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentRemoval"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasComponentRemoval"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isConnectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isConnectedBy">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasConnectedComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isConstructionTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isConstructionTypeOf">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasConstructionType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isConteineeComponentOf -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isConteineeComponentOf">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasContaineeComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isEliminatedByIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isEliminatedByIntervention">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Agent"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isFunctionalTypeAdditionToComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isFunctionalTypeAdditionToComponent">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isFunctionalTypeRemovalFromComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isFunctionalTypeRemovalFromComponent">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeRemoval"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isHigherThan -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isHigherThan">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LinearilyOrderedValue"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#OrderedValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isInterventionOfComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isInterventionOfComponent">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isIntroducedBy -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isIntroducedBy">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentAddition"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasIntroducingComponent"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isConteineeComponentOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isLedByMechanism -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isLedByMechanism"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isLocationCharacteristicsOf -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isLocationCharacteristicsOf"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isManifestationOfDamageForMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isManifestationOfDamageForMaterial">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMaterialManifestationOfDamage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isManifestationOfDamageOfComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isManifestationOfDamageOfComponent">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMaterialIntervenedBy -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMaterialIntervenedBy"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMeasurementOf -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMeasurementOf">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasMeasurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedBy"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByFunctionalChange -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByFunctionalChange"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByIntervention"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByStructuralChange -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedByStructuralChange"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMovedTo -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMovedTo">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentMovement"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentRemoval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMovedToComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMovedToComponent">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentMovement"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentRemoval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isPreventedByIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isPreventedByIntervention">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#preventsEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReferedBy"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isRemovedBy -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isRemovedBy">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentRemoval"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasRemovingComponent"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isConteineeComponentOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isRepairOfDamage -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isRepairOfDamage">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasRepairingIntervention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReplacedBy -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isReplacedBy">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentRemoval"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentReplacement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isRiskOf -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isRiskOf"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isStoppedByIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isStoppedByIntervention">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Mechanism"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isSubjectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isSubjectedTo">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Hazard"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Vulnerability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTotalValueOf -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTotalValueOf"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByAddition -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByAddition">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByDamage -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByDamage">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent">
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#triggersMechanism"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByFunctionalTypeAddition -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByFunctionalTypeAddition">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByFunctionalTypeRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByFunctionalTypeRemoval">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeRemoval"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByIntervention">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByLocationCharacteristicsAddition -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByLocationCharacteristicsAddition">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByLocationCharacteristicsRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByLocationCharacteristicsRemoval">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsRemoval"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByNaturalDisaster -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByNaturalDisaster">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#NaturalDisaster"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByPropertyChange -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByPropertyChange">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#PropertyChange"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByRemoval">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Removal"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByUseAddition -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByUseAddition">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UseAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByUseRemoval -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByUseRemoval">
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isTriggeredByEvent"/>
+        <rdfs:range rdf:resource="&monument-damage-taxonomies;UseRemoval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isUseAdditionToComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isUseAdditionToComponent">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UseAddition"/>
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isUseRemovalFromComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isUseRemovalFromComponent">
+        <rdfs:subPropertyOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent"/>
+        <rdfs:domain rdf:resource="&monument-damage-taxonomies;UseRemoval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isVulnerabilityOf -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isVulnerabilityOf"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#leadsToManifestationOfDamage -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#leadsToManifestationOfDamage">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Mechanism"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isLedByMechanism"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#mitigates -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#mitigates">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Risk"/>
+        <owl:inverseOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#isMitigatedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#preventsEvent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#preventsEvent">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToComponent">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToHazard -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#refersToHazard">
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Hazard"/>
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Risk"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#triggersMechanism -->
+
+    <owl:ObjectProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#triggersMechanism">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+        <rdfs:range rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Mechanism"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasNumericalValue -->
+
+    <owl:DatatypeProperty rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#hasNumericalValue">
+        <rdfs:domain rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Change"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Agent -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Agent">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+        <dc:description>Carrying factor of a damaging mechanism.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#AssesmentMethod -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#AssesmentMethod"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#CHObject -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#CHObject">
+        <dc:description>In the context of MONDIS, cultural heritage property refers to any immovable built entity of outstanding universal heritage value (as defined by UNESCO) in the form of both single and complex objects. It includes monuments, buildings and group of buildings, architectonic complexes, sites and infrastructure.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Change -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Change"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#CompactComponent -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#CompactComponent">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+        <dc:description>Element of structural and/or architectural relevance for the physical representation of a c. h. object. Particular components (e.g. construction) coincide with the physical representation of the whole c. h. object while other components might individuate only some of its parts. Components can be organized into a hierarchy of elements accordingly to the scale of analysis required by the user. In this perspective construction can be understood as the ´zero´ or ´root´ component from which the hierarchy always begins</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentAddition -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentAddition">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#StructuralChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentInitialConstruction -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentInitialConstruction">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentAddition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentManifestationOfDamage -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentManifestationOfDamage">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentMovement -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentMovement">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentAddition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentRemoval -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentRemoval">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Removal"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#StructuralChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentReplacement -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentReplacement">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentAddition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentValue -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ComponentValue">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Connection -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Connection">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Construction -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Construction">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#CompactComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#EnumerationValue -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#EnumerationValue"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalChange -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalChange">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalType -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalType">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectType"/>
+        <dc:description>Identifies the use of the construction. Under functional type are categorised terms that, although referring explicitly to objects, express the function of the building rather than its physical characteristics.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeAddition -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeAddition">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeRemoval -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalTypeRemoval">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalChange"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Removal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Hazard -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Hazard">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristics"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Intervention">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange"/>
+        <dc:description>Set of designed procedures aimed at stopping the damaging process and/or its carrying agent and at repairing the manifestation of damage detected on a component. Some of such procedures may aim also (or exclusively) at preventing actions from triggering damaging processes.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LinearilyOrderedValue -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LinearilyOrderedValue">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#OrderedValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristics -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristics"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsAddition -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsAddition">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsChange -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsChange">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsRemoval -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsRemoval">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#LocationCharacteristicsChange"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Removal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange"/>
+        <dc:description>Visible or detectable damage on components produced by a damaging mechanism,</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Material -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Material">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+        <dc:description>Matter or technological product of processed raw materials presenting distinguishable uniform physical, chemical and mechanical properties. Components are made of material.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MaterialManifestationOfDamage -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MaterialManifestationOfDamage">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ManifestationOfDamage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableAspect -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableAspect"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurementScale -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurementScale"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Mechanism -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Mechanism">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+        <dc:description>Damaging process triggered by an action intrinsic or external to the object that produces a manifestation of damage.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#NaturalDisaster -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#NaturalDisaster">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#NumericValue -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#NumericValue"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectType -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectType"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#OrderedValue -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#OrderedValue">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#EnumerationValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#PropertyChange -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#PropertyChange">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QualitativeMeasurement -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QualitativeMeasurement">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Quality -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Quality">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableAspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QuantitativeMeasurement -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#QuantitativeMeasurement">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Quantity -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Quantity">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableAspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Removal -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Removal">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Change"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Risk -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Risk">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#SpatialThing -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#SpatialThing"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#StructuralChange -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#StructuralChange">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#StructuralType -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#StructuralType">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#ObjectType"/>
+        <dc:description>Predominant arrangement of the resisting structure of the construction</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Style -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Style"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#TemporalEntity -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#TemporalEntity"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UnitOfMeasure -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UnitOfMeasure"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Use -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Use"/>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UseAddition -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#UseAddition">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Addition"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Vulnerability -->
+
+    <owl:Class rdf:about="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Vulnerability">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#MeasurableEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-taxonomies.owl#UseRemoval -->
+
+    <owl:Class rdf:about="&monument-damage-taxonomies;UseRemoval">
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#FunctionalChange"/>
+        <rdfs:subClassOf rdf:resource="http://kbss.felk.cvut.cz/ontologies/2011/monument-damage-core.owl#Removal"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
